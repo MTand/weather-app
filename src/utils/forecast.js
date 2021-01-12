@@ -9,7 +9,7 @@ const weatherSearch = (latitude, longtitude, callback) => {
         } else if (body.error) {
             callback('Unable to find geolocation')
         } else {
-            callback(undefined, `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees (${body.request.unit}) outside. It feels like ${body.current.feelslike}d.`)
+            callback(undefined, `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degrees (${body.request.unit}) outside (feels like ${body.current.feelslike} degrees). Local time: ${body.location.localtime}.`)
         }
     })
 }
